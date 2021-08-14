@@ -71,6 +71,8 @@ export class Provider extends Component {
                   addPlayer: this.handleAddPlayer
                 }
             }}>
+                {/* this.props.children lets the App component along with
+                all of the child components to be passed into Provider and rendered */}
                     { this.props.children }
             </ScoreboardContext.Provider>
         );
