@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// displays player score from player object and state
+
 const Counter = ({ index, score, changeScore }) => {
   return (
     <div className="counter">

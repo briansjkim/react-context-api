@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// calculates the total players and total points from the current state
 const Stats = (props) => {
  
   const totalPlayers = props.players.length;
