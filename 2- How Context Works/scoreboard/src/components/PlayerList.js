@@ -5,11 +5,12 @@ import Player from './Player';
 const PlayerList = (props) => {
   return (
     <Consumer>
-      { context => (
+      {/*  just like with props, we can use destructuring to extract the state received from Provider */}
+      { ({ players }) => (
         <React.Fragment>
-        {context.players.map( (player, index) =>
+        {players.map( (player, index) =>
           <Player 
-            {...player}
+          // removed the spread attribute for player's name, score, and id since we can just access them through Consumer
             key={player.id.toString()} 
             index={index}      
           />

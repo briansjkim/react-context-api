@@ -6,36 +6,28 @@ import Counter from './Counter';
 class Player extends PureComponent {
 
   static propTypes = {
-    name: PropTypes.string.isRequired,
-    score: PropTypes.number.isRequired,
-    id: PropTypes.number.isRequired,
     index: PropTypes.number.isRequired
   };
 
   render() {
     
     const { 
-      name,
-      id,
-      score,
       index,
     } = this.props;
 
     return (
       <div className="player">
         <Consumer>
-        { context => (
+          {/* same as what I did in PlayerList, we can extract actions and players from the Consumer */}
+        { ({ actions, players }) => (
           <span className="player-name">
-            <button className="remove-player" onClick={() => context.actions.removePlayer(id)}>✖</button>
-            { name }
+            <button className="remove-player" onClick={() => actions.removePlayer(players[index].id)}>✖</button>
+            { players[index].name }
           </span>
         )}
       </Consumer>
   
-        <Counter 
-          score={score}
-          index={index}
-        />
+        <Counter index={index} />
       </div>
     );
   }

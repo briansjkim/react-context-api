@@ -5,9 +5,9 @@ const Stats = () => {
   return (
     <Consumer>
       {/* this function is necessary and it returns the part of the UI you want to render */}
-      { context => {
-          const totalPlayers = context.players.length;
-          const totalPoints = context.players.reduce( (total, player) => {
+      { ({ players }) => {
+          const totalPlayers = players.length;
+          const totalPoints = players.reduce( (total, player) => {
             return total + player.score;
           }, 0);
 
