@@ -64,18 +64,18 @@ class App extends Component {
 
   render() {
     return (
-      <Provider>
+      // any child component will have access to this value now
+      <Provider value={this.state.players}>
         <div className="scoreboard">
-          <Header players={this.state.players} />
+        <Header />
 
-          <PlayerList 
-            players={this.state.players} 
-            changeScore={this.handleScoreChange}
-            removePlayer={this.handleRemovePlayer}   
-            />
-          
-          <AddPlayerForm addPlayer={this.handleAddPlayer} />
-        </div>
+        <PlayerList 
+          changeScore={this.handleScoreChange}
+          removePlayer={this.handleRemovePlayer}   
+        />
+        
+        <AddPlayerForm addPlayer={this.handleAddPlayer} />
+      </div>
       </Provider>
     );
   }
