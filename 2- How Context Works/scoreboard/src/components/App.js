@@ -65,7 +65,13 @@ class App extends Component {
   render() {
     return (
       // any child component will have access to this value now
-      <Provider value={this.state.players}>
+      <Provider value={{
+        players: this.state.players,
+        actions: {
+          changeScore: this.handleScoreChange,
+          
+        }
+      }}>
         <div className="scoreboard">
         <Header />
 

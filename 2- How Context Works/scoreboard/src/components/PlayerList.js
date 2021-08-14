@@ -8,7 +8,7 @@ const PlayerList = (props) => {
     <Consumer>
       { context => (
         <React.Fragment>
-        {context.map( (player, index) =>
+        {context.players.map( (player, index) =>
           <Player 
             {...player}
             key={player.id.toString()} 
