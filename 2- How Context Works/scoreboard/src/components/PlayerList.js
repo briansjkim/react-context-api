@@ -13,8 +13,6 @@ const PlayerList = (props) => {
             {...player}
             key={player.id.toString()} 
             index={index}
-            // do not replace props w/ context bc context is ONLY this.state.players in App.js
-            changeScore={props.changeScore}
             removePlayer={props.removePlayer}           
           />
         )}
@@ -25,7 +23,6 @@ const PlayerList = (props) => {
 }
 
 PlayerList.propTypes = {
-  changeScore: PropTypes.func.isRequired,
   removePlayer: PropTypes.func.isRequired,
 };
 

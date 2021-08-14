@@ -69,14 +69,13 @@ class App extends Component {
         players: this.state.players,
         actions: {
           changeScore: this.handleScoreChange,
-          
+
         }
       }}>
         <div className="scoreboard">
         <Header />
 
         <PlayerList 
-          changeScore={this.handleScoreChange}
           removePlayer={this.handleRemovePlayer}   
         />
         
