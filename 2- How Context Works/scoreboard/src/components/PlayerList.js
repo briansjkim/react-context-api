@@ -1,6 +1,5 @@
 import React from 'react';
 import { Consumer } from './Context';
-import PropTypes from 'prop-types';
 import Player from './Player';
 
 const PlayerList = (props) => {
@@ -12,8 +11,7 @@ const PlayerList = (props) => {
           <Player 
             {...player}
             key={player.id.toString()} 
-            index={index}
-            removePlayer={props.removePlayer}           
+            index={index}      
           />
         )}
       </React.Fragment>
@@ -21,9 +19,5 @@ const PlayerList = (props) => {
     </Consumer>
   );
 }
-
-PlayerList.propTypes = {
-  removePlayer: PropTypes.func.isRequired,
-};
 
 export default PlayerList;

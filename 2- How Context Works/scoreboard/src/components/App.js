@@ -74,11 +74,7 @@ class App extends Component {
       }}>
         <div className="scoreboard">
         <Header />
-
-        <PlayerList 
-          removePlayer={this.handleRemovePlayer}   
-        />
-        
+        <PlayerList />
         <AddPlayerForm addPlayer={this.handleAddPlayer} />
       </div>
       </Provider>
